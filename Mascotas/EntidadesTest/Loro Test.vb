@@ -15,6 +15,7 @@ Module Loro_Test
         loro1.Escuchar("Estan")
 
         Imprimir(loro1)
+        Console.WriteLine(loro1.Hablar())
 
         Console.ReadKey()
 

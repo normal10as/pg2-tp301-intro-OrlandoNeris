@@ -43,9 +43,20 @@
         Return Today.Year - fechanac.Year
     End Function
 
-    Public Function Hablar() As String
+    'Public Function Hablar() As String
+    '    Dim frase As String = " "
+    '    If _memoria.Count > 0 Then
+    '        frase = frase & _memoria.Dequeue & " "
+    '    End If
+    '    Return frase
+    'End Function
 
-        Return _memoria.Dequeue
+    Public Function Hablar() As String
+        Dim texto As String
+        While _memoria.Count > 0
+            texto = texto & _memoria.Dequeue & " "
+        End While
+        Return texto
     End Function
 
     Public Sub Escuchar(palabra As String)
