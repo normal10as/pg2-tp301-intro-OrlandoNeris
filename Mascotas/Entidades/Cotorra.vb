@@ -1,7 +1,9 @@
 ﻿Public Class Cotorra
     Inherits Loro
 
-    Private _edadHumana As UShort
+    Dim Escucha As Boolean = True
+
+
     Public ReadOnly Property EdadHumana As UShort
         Get
             Return Edad * 2
@@ -10,10 +12,15 @@
 
     Sub New()
         MyBase.New
-        Me.Nombre = "cotorra test"
-        Me.FechaNac = Today
-        Me.CalcularEdad(FechaNac)
     End Sub
 
+    Public Overrides Sub Escuchar(palabra As String)
+        If Escucha = True Then
+            _memoria.Enqueue(palabra)
+            Escucha = False
+        Else
+            Escucha = True
+        End If
 
+    End Sub
 End Class

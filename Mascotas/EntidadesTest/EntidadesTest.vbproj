@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{AA99491D-9DEE-422C-8F7E-F7A6E698F8A9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>EntidadesTest.Loro_Test</StartupObject>
+    <StartupObject>EntidadesTest.JaulaTest</StartupObject>
     <RootNamespace>EntidadesTest</RootNamespace>
     <AssemblyName>EntidadesTest</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -68,6 +68,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CotorraTest.vb" />
+    <Compile Include="JaulaTest.vb" />
     <Compile Include="Loro Test.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

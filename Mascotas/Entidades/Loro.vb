@@ -1,15 +1,12 @@
 ﻿Public Class Loro
 
-    Private _memoria As Queue(Of String)
+    Protected _memoria As Queue(Of String)
 
     Private _edad As Short
-    Public Property Edad As Short
+    Public ReadOnly Property Edad As Short
         Get
             Return _edad
         End Get
-        Set(value As Short)
-            _edad = value
-        End Set
     End Property
 
     Private _fechaNac As Date
@@ -36,30 +33,23 @@
         _memoria = New Queue(Of String)
         FechaNac = Today
         Nombre = "sin nombre"
-        Edad = CalcularEdad(FechaNac)
+        _edad = CalcularEdad(FechaNac)
     End Sub
 
     Public Function CalcularEdad(fechanac As Date) As UShort
+
         Return Today.Year - fechanac.Year
     End Function
 
-    'Public Function Hablar() As String
-    '    Dim frase As String = " "
-    '    If _memoria.Count > 0 Then
-    '        frase = frase & _memoria.Dequeue & " "
-    '    End If
-    '    Return frase
-    'End Function
-
     Public Function Hablar() As String
-        Dim texto As String
+        Dim texto As String = ""
         While _memoria.Count > 0
             texto = texto & _memoria.Dequeue & " "
         End While
         Return texto
     End Function
 
-    Public Sub Escuchar(palabra As String)
+    Public Overridable Sub Escuchar(palabra As String)
         _memoria.Enqueue(palabra)
     End Sub
 

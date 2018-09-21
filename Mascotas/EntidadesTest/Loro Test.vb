@@ -9,7 +9,7 @@ Module Loro_Test
 
         loro1.Nombre = "Mariano"
         loro1.FechaNac = # 08/02/1993#
-        loro1.Edad = loro1.CalcularEdad(loro1.FechaNac)
+        loro1.CalcularEdad(loro1.FechaNac)
         loro1.Escuchar("Hola")
         loro1.Escuchar("Como")
         loro1.Escuchar("Estan")
@@ -25,7 +25,7 @@ Module Loro_Test
 
         Console.WriteLine("Nombre: " & loro.Nombre)
         Console.WriteLine("Fecha de Nacimiento: " & loro.FechaNac)
-        Console.WriteLine("Edad: " & loro.Edad)
+        Console.WriteLine("Edad: " & loro.CalcularEdad(loro.FechaNac))
         Console.WriteLine("To String: " & loro.ToString)
         Console.WriteLine()
 
